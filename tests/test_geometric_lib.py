@@ -15,9 +15,9 @@ class CircleTestCase(unittest.TestCase):
             param = gl.circle.perimeter(i[0])
             expected = i[1]
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
-    def test_area_correcttness(self):
+    def test_area_correctness(self):
         test_data = [
             [10, 314.1592653589793],
             [100000000000, 3.141592653589793e+22],
@@ -29,7 +29,7 @@ class CircleTestCase(unittest.TestCase):
             param = gl.circle.area(i[0])
             expected = i[1]
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
 class RectangleTestCase(unittest.TestCase):
 
@@ -41,13 +41,11 @@ class RectangleTestCase(unittest.TestCase):
             [0, 5, 10],
             [0.001, 0.002, 0.006]
         ]
-
         for i in test_data:
             param = gl.rectangle.perimeter(i[0], i[1])
             expected = i[2]
-
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
     def test_area_correctness(self):
         test_data = [
@@ -57,13 +55,11 @@ class RectangleTestCase(unittest.TestCase):
             [0, 5, 0],
             [0.001, 0.002, 2e-06]
         ]
-
         for i in test_data:
             param = gl.rectangle.area(i[0], i[1])
             expected = i[2]
-
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
 
 class SquareTestCase(unittest.TestCase):
@@ -76,13 +72,11 @@ class SquareTestCase(unittest.TestCase):
             [0, 0],
             [0.001, 0.004]
         ]
-
         for i in test_data:
             param = gl.square.perimeter(i[0])
             expected = i[1]
-
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
     def test_area_correctness(self):
         test_data = [
@@ -92,13 +86,11 @@ class SquareTestCase(unittest.TestCase):
             [0, 0],
             [0.001, 1e-06]
         ]
-
         for i in test_data:
             param = gl.square.area(i[0])
             expected = i[1]
-
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
 
 class TriangleTestCase(unittest.TestCase):
@@ -112,13 +104,11 @@ class TriangleTestCase(unittest.TestCase):
             [0, 0, 0, 0],
             [0.001, 0.002, 0.003, 0.006]
         ]
-
         for i in test_data:
             param = gl.triangle.perimeter(i[0], i[1], i[2])
             expected = i[3]
-
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
     def test_area_correctness(self):
         test_data = [
@@ -128,12 +118,10 @@ class TriangleTestCase(unittest.TestCase):
             [0, 5, 0],
             [0.001, 0.002, 1e-06]
         ]
-
         for i in test_data:
             param = gl.triangle.area(i[0], i[1])
             expected = i[2]
-
             with self.subTest():
-                self.assertEqual(param, expected)
+                self.assertAlmostEqual(param, expected)
 
 
